@@ -7,13 +7,13 @@ namespace AdvancedUITesting.ScreenShotsForSlides.PageObjects.Slide1 {
 
 	public class LoginPage {
 
-		[FindsBy(How = How.Id, Using = "MemberIdentifier")]
+		[FindsBy(How = How.Id, Using = "UserName")]
 		public IWebElement UserName { get; protected set; }
 
-		[FindsBy(How = How.Id, Using = "Password")]
+		[FindsBy(How = How.ClassName, Using = "some-css-class")]
 		public IWebElement Password { get; protected set; }
 
-		[FindsBy(How = How.Id, Using = "LoginSubmit")]
+		[FindsBy(How = How.CssSelector, Using = "#LoginForm > button")]
 		public IWebElement SubmitButton { get; protected set; }
 
 		public void LoginAs(string emailAddress, string password) {
@@ -23,3 +23,4 @@ namespace AdvancedUITesting.ScreenShotsForSlides.PageObjects.Slide1 {
 		}
 	}
 }
+

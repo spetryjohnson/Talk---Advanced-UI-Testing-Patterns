@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Drawing" />
     <Reference Include="WebDriver, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.8.0\lib\net45\WebDriver.dll</HintPath>
@@ -60,7 +61,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Extensions\IWebElementExtensions.cs" />
-    <Compile Include="PageObjectBase.cs" />
+    <Compile Include="BasePageObject.cs" />
+    <Compile Include="Extensions\WebDriverExtensions.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
