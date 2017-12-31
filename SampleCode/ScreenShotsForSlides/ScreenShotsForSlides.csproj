@@ -50,6 +50,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasePageObject_4.cs" />
+    <Compile Include="BasePageObject_3.cs" />
+    <Compile Include="BasePageObject_scratch.cs" />
+    <Compile Include="BasePageObject_2.cs" />
     <Compile Include="BasePageObject_1.cs" />
     <Compile Include="LoginPage_2.cs" />
     <Compile Include="LoginPage_1.cs" />
