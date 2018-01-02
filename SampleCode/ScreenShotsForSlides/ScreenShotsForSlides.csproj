@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestableCode_2.cs" />
     <Compile Include="TestableCode_1.cs" />
     <Compile Include="TestData_9.cs" />
     <Compile Include="TestData_8.cs" />
