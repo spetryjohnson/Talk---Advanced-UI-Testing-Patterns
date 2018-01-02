@@ -32,17 +32,17 @@ namespace AdvancedUITesting.ScreenShotsForSlides.TestData.Slide7 {
 		}
 	}
 
-	internal class Address {
+	public class Address {
 		public Address() {
 		}
 	}
 
-	internal class Board {
+	public class Board {
 		public Board() {
 		}
 	}
 
-	internal class Interval {
+	public class Interval {
 		public Interval() {
 		}
 	}
