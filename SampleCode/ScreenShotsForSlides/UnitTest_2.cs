@@ -8,12 +8,14 @@ using OpenQA.Selenium.Support.UI;
 using AdvancedUITesting.SeleniumTests;
 using NUnit.Framework;
 
-namespace AdvancedUITesting.ScreenShotsForSlides.TestableCode.Slide3 {
+namespace AdvancedUITesting.ScreenShotsForSlides.UnitTest.Slide2 {
 
 	public class SomePageObject {
 
-		[FindsBy(How = How.CssSelector, Using = "tr.foo > td > span[0] > a")]
-		public IWebElement SomeImportantLink { get; set; } 
+		public string DoTheThing(bool foo, bool baz, bool bat) {
+			// ...
+			return null;
+		}
 	}
 
 }

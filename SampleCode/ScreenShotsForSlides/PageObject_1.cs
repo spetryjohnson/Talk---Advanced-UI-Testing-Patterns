@@ -8,26 +8,20 @@ using OpenQA.Selenium.Support.UI;
 using AdvancedUITesting.SeleniumTests;
 using NUnit.Framework;
 
-namespace AdvancedUITesting.ScreenShotsForSlides.TestableCode.Slide1 {
+namespace AdvancedUITesting.ScreenShotsForSlides.PageObject.Slide1 {
 
 	[TestFixture]
 	public class ApplicationDataEntryFormTests {
-		TestPage TestPage;
 		LoginPage LoginPage;
 		object dbContext = null;
 
 		[Test]
-		public void When_user_is_active_email_is_shown() {
-			var activeUser = UserHelper.Create(
-				active: true
-			);
-			UserHelper.Save(dbContext, activeUser);
+		public void Administrator_logs_in_and_lands_on_dashboard() {
+			LoginPage.GoToPage(); 
 
-			LoginPage.LogInAs(activeUser);
+			var landingPage = LoginPage.LogInAsAdmin();
 
-			TestPage.GoToPage();
-
-			Assert.That(TestPage.EmailAddress.IsDisplayed);
+			Assert.That(landingPage, Is.InstanceOf<DashboardPage>());
 		}
 	}
 
@@ -41,7 +35,7 @@ namespace AdvancedUITesting.ScreenShotsForSlides.TestableCode.Slide1 {
 		}
 	}
 
-	public class TestPage : BasePageObject {
+	public class DashboardPage : BasePageObject {
 		public IWebElement EmailAddress { get; set; }
 		internal void GoToPage() {
 			throw new NotImplementedException();
@@ -49,7 +43,10 @@ namespace AdvancedUITesting.ScreenShotsForSlides.TestableCode.Slide1 {
 	}
 
 	public class LoginPage : BasePageObject {
-		internal void LogInAs(object activeUser) {
+		internal BasePageObject LogInAsAdmin() {
+			throw new NotImplementedException();
+		}
+		internal void GoToPage() {
 			throw new NotImplementedException();
 		}
 	}
