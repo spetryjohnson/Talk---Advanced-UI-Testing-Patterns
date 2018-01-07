@@ -57,10 +57,11 @@
   <ItemGroup>
     <Compile Include="PageObject_1.cs" />
     <Compile Include="DataTest_1.cs" />
+    <Compile Include="TestableCode_3.cs" />
     <Compile Include="UnitTest_2.cs" />
     <Compile Include="UnitTest_1.cs" />
+    <Compile Include="TestableCode_5.cs" />
     <Compile Include="TestableCode_4.cs" />
-    <Compile Include="TestableCode_3.cs" />
     <Compile Include="TestableCode_2.cs" />
     <Compile Include="TestableCode_1.cs" />
     <Compile Include="TestData_9.cs" />
