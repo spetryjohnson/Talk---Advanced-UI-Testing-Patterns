@@ -12,11 +12,8 @@ namespace AdvancedUITesting.ScreenShotsForSlides.TestableCode.Slide4 {
 
 	public class SomePageObject {
 
-		[FindsBy(How = How.CssSelector, Using = "a.selenium-SomeImportantLink")]
-		public IWebElement SomeImportantLink { get; set; }
-
-		[FindsBy(How = How.CssSelector, Using = "#Selenium-SomeImportantLink")]
-		public IWebElement AnotherImportantLink { get; set; }
+		[FindsBy(How = How.CssSelector, Using = "tr.foo > td > span[0] > a")]
+		public IWebElement SomeImportantLink { get; set; } 
 	}
 
 }

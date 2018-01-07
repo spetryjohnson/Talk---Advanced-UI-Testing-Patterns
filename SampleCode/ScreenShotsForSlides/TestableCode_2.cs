@@ -13,45 +13,43 @@ namespace AdvancedUITesting.ScreenShotsForSlides.TestableCode.Slide2 {
 	[TestFixture]
 	public class ApplicationDataEntryFormTests {
 
-		[TestCase(true)]
-		[TestCase(false)]
-		public void When_user_is_active_email_is_shown(bool active) {
-			var activeUser = UserHelper.Create(
-				active: active,
-				email: "joe@test.com"
+		[Test]
+		public void When_user_is_licensed_then_cycle_dates_are_visible() {
+			var user = UserHelper.Create(
+				isLicensed: true,
+				cycleEndDate: new DateTime(2018, 1, 1)
 			);
 
-			var model = new TestPageViewModel(activeUser);
-			var result = model.RenderEmailAddress();
+			var model = new MyAccountViewModel(user);
+			var result = model.RenderCycleDates();
 
-			if (active) {	/* positive assertion */ }
-			else {			/* negative assertion */ }
-		}
-	}
-
-	internal class TestPageViewModel {
-		private object activeUser;
-
-		public TestPageViewModel(object activeUser) {
-			this.activeUser = activeUser;
+			Assert.That(result, Is.EqualTo(user.CycleEnd));
 		}
 
-		internal string RenderEmailAddress() {
-			throw new NotImplementedException();
-		}
-	}
+		internal class MyAccountViewModel {
+			private object activeUser;
 
-	public static class UserHelper {
-		public static object Create(bool active) {
-			throw new NotImplementedException();
-		}
+			public MyAccountViewModel(object activeUser) {
+				this.activeUser = activeUser;
+			}
 
-		internal static object Create(bool active, string email) {
-			throw new NotImplementedException();
+			internal string RenderCycleDates() {
+				throw new NotImplementedException();
+			}
 		}
 
-		internal static void Save(object dbContext, object user) {
-			throw new NotImplementedException();
+		public class User {
+			public string CycleEnd { get; set; }
+		}
+
+		public static class UserHelper {
+			internal static User Create(bool isLicensed, DateTime cycleEndDate) {
+				throw new NotImplementedException();
+			}
+
+			internal static void Save(object dbContext, object user) {
+				throw new NotImplementedException();
+			}
 		}
 	}
 }

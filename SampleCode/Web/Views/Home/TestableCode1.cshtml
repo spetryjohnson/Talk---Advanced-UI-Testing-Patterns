@@ -6,23 +6,17 @@
 }
 
 
-<div class="something-important">
-    @if (Model.Foo && Model.Bar && Model.Bat) {
-		<b>FOO and BAR and BAT!</b>
+<div class="cycle-dates">
+    @if (Model.IsLicensed) {
+		@Model.CycleEndDate
 	}
-	else if (Model.Foo && Model.Bar && !Model.Bat) {
-		<b>FOO and BAR, but NOT BAT!</b>
-	}
-	else if (Model.Foo && !Model.Bar && Model.Bat) {
-		<b>FOO and BAT, but NOT BAR!</b>
-	}
-	else if (!Model.Foo && Model.Bar && Model.Bat) {
-		<b>BAR and BAT, but NOT FOO!</b>
+	else {
+		<text>Not licensed</text>
 	}
 </div>
 
-<div class="something-important">
-	@Model.RenderWhatever(Model.Foo, Model.Bar, Model.Baz)
+<div class="cycle-dates">
+	@Model.RenderCycleDates()
 </div>
 
 

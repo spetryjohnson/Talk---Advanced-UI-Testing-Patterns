@@ -13,12 +13,16 @@ namespace AdvancedUITesting.ScreenShotsForSlides.TestData.Slide5 {
 	[TestFixture]
 	public class ApplicationDataEntryFormTests {
 		ApplicationFormPage DataEntryPage;
+		LoginPage LoginPage;
 
 		[Test]
 		public void Applicants_can_submit_application_with_fee() {
-			var dataEntryForm = new DataEntryForm();
+			var dataEntryForm = new DataEntryForm(
+				multiTab: true
+			);
 			Database.Save(dataEntryForm);
 
+			LoginPage.LogInAsApplicant();
 			DataEntryPage.GoToPage(id: dataEntryForm.Id);
 			
 			// ...
@@ -48,12 +52,22 @@ namespace AdvancedUITesting.ScreenShotsForSlides.TestData.Slide5 {
 	}
 
 	public class DataEntryForm {
+		private bool multiTab;
+
+		public DataEntryForm(bool multiTab) {
+			this.multiTab = multiTab;
+		}
+
 		public bool IsMultiTab { get; internal set; }
 		public int Id { get; set; }
 	}
 
 	public class ApplicationFormPage : BasePageObject {
 
+	}
+
+	public class LoginPage : BasePageObject {
+		public void LogInAsApplicant() { }
 	}
 
 	public class BasePageObject {

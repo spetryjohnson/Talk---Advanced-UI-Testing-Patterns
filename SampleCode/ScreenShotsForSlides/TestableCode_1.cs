@@ -12,27 +12,28 @@ namespace AdvancedUITesting.ScreenShotsForSlides.TestableCode.Slide1 {
 
 	[TestFixture]
 	public class ApplicationDataEntryFormTests {
-		TestPage TestPage;
+		TestPage MyAccountPage;
 		LoginPage LoginPage;
 		object dbContext = null;
 
 		[Test]
-		public void When_user_is_active_email_is_shown() {
+		public void When_user_is_licensed_then_cycle_dates_are_visible() {
 			var activeUser = UserHelper.Create(
-				active: true
+				isLicensed: true,
+				cycleEndDate: new DateTime(2018, 1, 1)
 			);
 			UserHelper.Save(dbContext, activeUser);
 
 			LoginPage.LogInAs(activeUser);
 
-			TestPage.GoToPage();
+			MyAccountPage.GoToPage();
 
-			Assert.That(TestPage.EmailAddress.IsDisplayed);
+			Assert.That(MyAccountPage.CycleEndDate.IsDisplayed);
 		}
 	}
 
 	public static class UserHelper {
-		public static object Create(bool active) {
+		internal static object Create(bool isLicensed, DateTime cycleEndDate) {
 			throw new NotImplementedException();
 		}
 
@@ -42,7 +43,7 @@ namespace AdvancedUITesting.ScreenShotsForSlides.TestableCode.Slide1 {
 	}
 
 	public class TestPage : BasePageObject {
-		public IWebElement EmailAddress { get; set; }
+		public IWebElement CycleEndDate { get; set; }
 		internal void GoToPage() {
 			throw new NotImplementedException();
 		}
