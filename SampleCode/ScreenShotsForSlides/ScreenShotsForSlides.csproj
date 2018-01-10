@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageObject_2.cs" />
     <Compile Include="PageObject_1.cs" />
     <Compile Include="DataTest_1.cs" />
     <Compile Include="TestableCode_3.cs" />
