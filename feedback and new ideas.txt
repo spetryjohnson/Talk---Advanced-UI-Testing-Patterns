@@ -1,0 +1,2 @@
+Incorporate ideas around timing delays when doing interactive stuff
+
