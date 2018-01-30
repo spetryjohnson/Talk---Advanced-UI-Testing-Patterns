@@ -3,3 +3,7 @@ Incorporate ideas around timing delays when doing interactive stuff
 
 Jason's notes
 http://fogbugz.heuristics.net/default.asp?pre=preMultiSearch&pg=pgList&pgBack=pgSearch&search=2&searchFor=35769
+
+Make page object elements private - better to expose functions that expose properties of those elements vs making them public
+because that basically tells people "you can do whatever you want with this". Forcing them to be private is a better way of
+enforcing clean patterns
