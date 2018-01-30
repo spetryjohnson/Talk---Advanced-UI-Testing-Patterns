@@ -1,2 +1,5 @@
 Incorporate ideas around timing delays when doing interactive stuff
 
+
+Jason's notes
+http://fogbugz.heuristics.net/default.asp?pre=preMultiSearch&pg=pgList&pgBack=pgSearch&search=2&searchFor=35769
